@@ -21,9 +21,12 @@
         <nav class="navbar navbar-dark bg-dark">
             <div class="container-fluid">
                 <span class="navbar-brand mb-0 h1">cloo-llection</span>
+                <span class="navbar-brand mb-0 h1 totalchartcount"></span>
             </div>
         </nav>
     </header>
+
+    
 
     <div class="container-lg">
 
@@ -34,20 +37,25 @@
             <p class="mb-0">charts i like / made by friends</p>
         </div>
 
-
         <!--ここから難易度表本体-->
         <div>
-            <table class="table table-light table-striped table-hover" id="table_int">
+            <table class="table table-striped" id="table_int">
             </table>
         </div>
         <script language="javascript" type="text/javascript">
+            var total_count = 0;
             $(document).ready(function () {
                 $.getJSON($("meta[name=bmstable]").attr("content"), function (header) {
                     $.getJSON(header.data_url, function (information) {
                         makeBMSTable(information, header.symbol);
+                        displayTotalChartCount();
                     });
                 });
             });
+
+            function displayTotalChartCount() {
+                $(".totalchartcount").html("譜面数: " + total_count + "");
+            }
 
             function makeBMSTable(info, mark) {
                 var x = "";
@@ -72,7 +80,7 @@
                         x = info[i].level;
                     }
 
-                    var str = $("<tr></tr>");
+                    var str = $("<tr class='table_transition'></tr>");
 
                     // Level
                     $("<td width='120px'>" + mark + x + "</td>").appendTo(str);
@@ -100,7 +108,7 @@
 
                     str.appendTo(obj);
                     count++;
-
+                    total_count++;
                 }
                 $("</tbody>").appendTo(obj);
 
