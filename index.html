@@ -2,7 +2,7 @@
 <html lang="ja">
 <!-- ヽ(・∀・)ﾉ -->
 <head>
-    <title>ここに難易度表の名前</title>
+    <title>cloo-llection</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,15 +20,15 @@
     <header class="mb-3">
         <nav class="navbar navbar-dark bg-dark">
             <div class="container-fluid">
-                <span class="navbar-brand mb-0 h1">ここに難易度表の名前</span>
+                <span class="navbar-brand mb-0 h1">cloo-llection</span>
             </div>
         </nav>
     </header>
 
-    <div class="container">
+    <div class="container-lg">
 
         <div class="alert alert-info mb-3" role="alert">
-            <p>ここに難易度表の説明文。次期難易度表フォーマット対応。</p>
+            <p>idk what to put here yet</p>
             <p>難易度表の読み込みと表示に数秒かかります。</p>
             <hr>
             <p class="mb-0">charts i like / made by friends</p>
@@ -75,10 +75,10 @@
                     var str = $("<tr></tr>");
 
                     // Level
-                    $("<td width='5%'>" + mark + x + "</td>").appendTo(str);
+                    $("<td width='120px'>" + mark + x + "</td>").appendTo(str);
 
                     // Title
-                    $("<td width='45%'>" +
+                    $("<td width='40%'>" +
                         "<a href='http://www.dream-pro.info/~lavalse/LR2IR/search.cgi?mode=ranking&bmsmd5=" + info[
                             i]
                         .md5 + "' target='_blank'>" + info[i].title + "</a></td>").appendTo(str);
