@@ -14,6 +14,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous">
     </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js'></script>
 </head>
 
 <body>
@@ -21,7 +22,8 @@
         <nav class="navbar navbar-dark bg-dark">
             <div class="container-fluid">
                 <span class="navbar-brand mb-0 h1">cloo-llection</span>
-                <span class="navbar-brand mb-0 h1 totalchartcount"></span>
+                <span class="text-light mb-0" id="clock"></span>
+                <span class="navbar-brand mb-0 h1 totalchartcount">Loading...</span>
             </div>
         </nav>
     </header>
@@ -92,16 +94,26 @@
                         .md5 + "' target='_blank'>" + info[i].title + "</a></td>").appendTo(str);
 
                     // Artist
-                    $("<td width='30%'>" +
-                        "<a href='" + info[
-                            i]
-                        .url + "' target='_blank'>" + info[i].artist + "</a></td>").appendTo(str);
+                    if (info[i].url == "") {
+                        $("<td width='30%'>" + info[i].artist + "</td>").appendTo(str);
+                    }
+                    else {
+                        $("<td width='30%'>" +
+                            "<a href='" + info[
+                                i]
+                            .url + "' target='_blank'>" + info[i].artist + "</a></td>").appendTo(str);
+                    }
 
                     // Chart URL
-                    $("<td width='10%'>" +
-                        "<a href='" + info[
-                            i]
-                        .url_diff + "' target='_blank'>" + info[i].name_diff + "</a></td>").appendTo(str);
+                    if (info[i].url_diff == "") {
+                        $("<td width='10%'>" + info[i].name_diff + "</td>").appendTo(str);
+                    }
+                    else {
+                        $("<td width='10%'>" +
+                            "<a href='" + info[
+                                i]
+                            .url_diff + "' target='_blank'>" + info[i].name_diff + "</a></td>").appendTo(str);
+                    }
                     
                     // Comment
                     $("<td width='10%'>" + info[i].comment + "</td>").appendTo(str);
@@ -117,6 +129,32 @@
                         " (" + count + "譜面)</b></td>");
                 }
             }
+
+            // Test clock
+            var urlParams;
+            (function () {
+                var match,
+                    pl     = /\+/g,  // Regex for replacing addition symbol with a space
+                    search = /([^&=]+)=?([^&]*)/g,
+                    decode = function (s) { return decodeURIComponent(s.replace(pl, " ")); },
+                    query  = window.location.search.substring(1);
+
+                urlParams = {};
+                while (match = search.exec(query))
+                urlParams[decode(match[1])] = decode(match[2]);
+            })();
+
+            var output = document.getElementById("clock");
+            // if (urlParams["style"]) output.setAttribute("style", urlParams["style"]);
+            // if (urlParams["bodyStyle"]) document.body.setAttribute("style", urlParams["bodyStyle"]);
+
+            clockFormat = "YYYY-MM-DD HH:mm:ss";
+            var c;
+            setInterval(
+            c = function() {
+                output.innerText = moment().format(clockFormat);
+            }, 1000);
+            c();
         </script>
     </div>
 
