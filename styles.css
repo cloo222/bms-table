@@ -6,20 +6,136 @@
     /* background-color: #aaaaaa; */
 }
 
-/* .table_transition td{
-    background-color: #ebf8ff;
-    transition: background-color 0.3s ease 0s;
-} */
+.level_font_symbol {
+    font-size: 16px;
+    white-space:nowrap;
+    font-weight: bold;
+}
 
-.table_transition:hover td {
-    background-color: #b0f3ffcc;
+.level_font {
+    font-size: 16px;
+}
+
+.level_text {
+    display: flex;
+}
+
+.table-header-text {
+    white-space: nowrap;
+}
+
+.table-custom td{
+  padding: 0.25rem !important;
+}
+
+.table-parent {
+    border-radius: 6px;
+    overflow:hidden;
+}
+
+.table_transition td{
+    background-color: #ebf8ff;
     transition: background-color 0.3s ease 0s;
 }
 
-#grad {
-  background-image: linear-gradient(180deg, rgba(255,0,0,0), rgba(255,0,0,1));
+.table_transition{
+    background-color: #ffffffbe;
+    backdrop-filter: blur(4px);
+}
+
+.table_transition:hover td {
+    background-color: #c5efffcc;
+    transition: opacity 0.3s ease 0s;
+    background-image: linear-gradient(-45deg, #abf5ff, #d7e9f5);
+	background-size: 200% 200%;
+	animation: gradient 5s ease infinite;
+    background-attachment: fixed;
+    opacity: 1;
+	/* height: 100vh; */
+}
+
+.table_transition_text:hover td {
+    animation: glow .5s infinite alternate;
+    color: #294475;
+}
+
+.background-layer {
+    /* background-image: linear-gradient(-45deg, #abf5ff, #d7e9f5);
+    background-size: 200% 200%;
+    animation: gradient 5s ease infinite;
+    background-attachment: fixed; */
+    text-shadow: #77777780 2px 2px 4px;
+    color:#2c2d30;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+    font-size: 24px;
+    
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+.container-layer {
+    position: relative;
+    width: 100%;
+    /* height: 100vh; */
+    /* overflow: auto; */
+}
+
+@keyframes glow {
+    to {
+        text-shadow: 1px 1px 5px rgb(94, 139, 161);
+    }
 }
 
 .top-margin {
     margin-top: 64px;
 }
+
+.marquee {
+  width: 100%;
+  line-height: 50px;
+  /* background-color: red; */
+  /* color: white; */
+  white-space: nowrap;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.marquee p {
+  display: inline-block;
+  padding-left: 100%;
+  animation: marquee 10s linear infinite;
+}
+@keyframes marquee {
+  0%   { transform: translate(0, 0); }
+  100% { transform: translate(-100%, 0); }
+}
+
+/* body {
+	background: linear-gradient(-45deg, #ee775288, #e73c7e88, #23a6d588, #23d5ab88);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 100vh;
+} */
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
