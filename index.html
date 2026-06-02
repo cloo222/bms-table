@@ -28,6 +28,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+    <!-- cursor effect -->
+    <script src="https://unpkg.com/cursor-effects@latest/dist/browser.js"></script>
 </head>
 
 <body class="container-layer noto-sans-jp-san-serif">
@@ -40,10 +42,46 @@
             </div>
         </nav>
     </header>
-
+    <div class="background-layer noselect">  
+        <p class="font-monospace">ﾃﾞｹﾃﾞｹ<br>
+        　ﾄﾞｺﾄﾞｺ　　ｵﾗｵﾗｯ!!<br>
+        ☆　ﾄﾞﾑﾄﾞﾑ<br>
+        　ヽ　ﾀﾞﾀﾞﾀﾞﾀﾞ　　♪<br>
+        ☆ﾄﾞｼｬｰﾝ!　　ｼｬﾝｼｬﾝ<br>
+        　＝ﾆ＝　∧_∧　　☆<br>
+        　／　〃(･∀･#)　 /<br>
+        〆|　 ＼と＼と|∈Z∋<br>
+        　|　/⌒ヽヽｺノ　|<br>
+        　|ΣΣ　| |∪〓 |<br>
+        ／|＼ﾍ＿ノノ∥_／|＼<br>
+        　ﾄﾞﾁﾄﾞﾁ!</p>
+    </div>
+    <div class="background-layer-2" id="cursorlayer"></div>
     <div class="container-lg top-margin">
+        <div class="lr2ir-menu mb-3 shadow-sm">
+            Archives ⇒
+            <a href="https://lr2ir.com/">LR2IR Archive</a>
+            - 
+            <a href="https://lr2db.congenial-spirits.com/">LR2DB</a>
+            - 
+            <a href="https://lr2-chart-viewer.gaftalk.com/">BMS譜面検索</a>
+        </div>
         <div class="alert alert-info mb-3 shadow-sm" role="alert">
+            <span class="d-flex justify-content-center align-items-center">
+                <b>R.I.P. LR2IR. おやすみなさい</b>
+            </span>
             <p>idk what to put here yet (i need a better table name)</p>
+            <p class="" style="font-size: 14px;">
+                (∩^-^)∩-1: &lt;=☆10</br>
+                (∩^-^)∩0: ☆11</br>
+                (∩^-^)∩1-26: ★1-26 duh</br>
+                (∩^-^)∩∞: INFINITY STAGE &gt;=★27</br>
+                (∩^-^)∩?: i have no idea but Very Fun</br>
+                (∩^-^)∩(^^): foon</br>
+                (∩^-^)∩∀: 地力+皿+LN+ソフラン+縦連+...?</br>
+                (∩^-^)∩◆: LN</br>
+                (∩^-^)∩長: long charts &gt;3 mins?</br>
+            </p>
             <p><i>A wise lai- once said: 神曲神譜面</i></p>
             <div class="marquee">
                 <p><i>"哇依隻我愛歌!"</i></p>
@@ -58,20 +96,7 @@
             <table class="table table-striped shadow-sm table-custom rounded-2" id="table_int">
             </table>
         </div>
-        <div class="background-layer noselect">  
-            <p class="font-monospace">ﾃﾞｹﾃﾞｹ<br>
-            　ﾄﾞｺﾄﾞｺ　　ｵﾗｵﾗｯ!!<br>
-            ☆　ﾄﾞﾑﾄﾞﾑ<br>
-            　ヽ　ﾀﾞﾀﾞﾀﾞﾀﾞ　　♪<br>
-            ☆ﾄﾞｼｬｰﾝ!　　ｼｬﾝｼｬﾝ<br>
-            　＝ﾆ＝　∧_∧　　☆<br>
-            　／　〃(･∀･#)　 /<br>
-            〆|　 ＼と＼と|∈Z∋<br>
-            　|　/⌒ヽヽｺノ　|<br>
-            　|ΣΣ　| |∪〓 |<br>
-            ／|＼ﾍ＿ノノ∥_／|＼<br>
-            　ﾄﾞﾁﾄﾞﾁ!</p>
-        </div>
+        
         <script language="javascript" type="text/javascript">
             var total_count = 0;
             $(document).ready(function () {
@@ -117,7 +142,8 @@
 
                     // Title
                     $("<td width='40%'>" +
-                        "<a href='http://www.dream-pro.info/~lavalse/LR2IR/search.cgi?mode=ranking&bmsmd5=" + info[
+                        // RIP LR2IR http://www.dream-pro.info/~lavalse/LR2IR/search.cgi?mode=ranking&bmsmd5=
+                        "<a href='https://lr2ir.com/charts/" + info[
                             i]
                         .md5 + "' target='_blank'>" + info[i].title + "</a></td>").appendTo(str);
 
@@ -191,6 +217,16 @@
                 output.innerText = moment().format(clockFormat);
             }, 1000);
             c();
+
+            // cursor lol
+            // window.addEventListener("load", (event) => {
+            //     const targetElement = document.querySelector("#cursorlayer");
+            //     new cursoreffects.bubbleCursor({
+            //     element: targetElement,
+            //     fillColor: "#f771b4",
+            //     strokeColor: "#e6f1f7",
+            //     });
+            // });
         </script>
     </div>
 
