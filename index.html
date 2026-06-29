@@ -19,10 +19,11 @@
     <meta name="bmstable" content="header.json" />
     <link rel="stylesheet" href="styles.css" />
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
+    </script>
     </script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js'></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -59,7 +60,10 @@
     <div class="background-layer-2" id="cursorlayer"></div>
     <div class="container-lg top-margin">
         <div class="lr2ir-menu mb-3 shadow-sm">
-            Archives ⇒
+            <a href="https://ir.stellabms.xyz/">STELLAVERSE IR</a>
+            -
+            <a href="https://github.com/GOMazk/OpenLR2">OpenLR2</a>
+            -
             <a href="https://lr2ir.com/">LR2IR Archive</a>
             - 
             <a href="https://lr2db.congenial-spirits.com/">LR2DB</a>
@@ -67,9 +71,9 @@
             <a href="https://lr2-chart-viewer.gaftalk.com/">BMS譜面検索</a>
         </div>
         <div class="alert alert-info mb-3 shadow-sm" role="alert">
-            <span class="d-flex justify-content-center align-items-center">
+            <!-- <span class="d-flex justify-content-center align-items-center">
                 <b>R.I.P. LR2IR. おやすみなさい</b>
-            </span>
+            </span> -->
             <p>idk what to put here yet (i need a better table name)</p>
             <p class="" style="font-size: 14px;">
                 (∩^-^)∩-1: &lt;=☆10</br>
@@ -143,7 +147,7 @@
                     // Title
                     $("<td width='40%'>" +
                         // RIP LR2IR http://www.dream-pro.info/~lavalse/LR2IR/search.cgi?mode=ranking&bmsmd5=
-                        "<a href='https://lr2ir.com/charts/" + info[
+                        "<a href='https://ir.stellabms.xyz/charts/" + info[
                             i]
                         .md5 + "' target='_blank'>" + info[i].title + "</a></td>").appendTo(str);
 
